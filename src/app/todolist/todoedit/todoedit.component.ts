@@ -15,13 +15,13 @@ export class TodoeditComponent implements OnInit {
   constructor(private todolistservice: TodolistService,private route : ActivatedRoute, private router: Router ) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('todoId');
-if (id == null ){
-this.todo = new Todo(0, "");
+    let id = this.route.snapshot.paramMap.get('id');
+      if (id == null ){
+        this.todo = new Todo(0, "");
 
-} else{
-this.todo = this.todolistservice.get((parseInt(id)));
-}
+    }else{
+        this.todo = this.todolistservice.get((parseInt(id)));
+      }
 
 
 }
